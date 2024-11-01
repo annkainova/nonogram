@@ -1,0 +1,72 @@
+@import 'normalize';
+@import 'variables';
+
+.btn {
+  width: 150px;
+  padding: 10px;
+  text-transform: capitalize;
+  font-size: $fontSize;
+  color: $light;
+  background: url(../assets/img/btn.png) no-repeat;
+  background-size: cover;
+  border: none;
+  font-family: $fontFamily;
+
+  @media (hover: hover) {
+    &:hover {
+      color: $light-green;
+      background: url(../assets/img/btn-hover.png) no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &:active {
+    color: $light-green;
+    background: url(..//assets/img/btn-active.png) no-repeat;
+    background-size: cover;
+  }
+}
+
+
+.reset {
+  background: url(..//assets/icons/reset.png) no-repeat;
+}
+
+.decision-game {
+  background: url(..//assets/icons/eye-open.png) no-repeat;
+
+  &.active {
+    background: url(..//assets/icons/eye-close.png) no-repeat;
+  }
+}
+
+.mute {
+  background: url(..//assets/icons/mute-icon.png) no-repeat;
+}
+
+.unmute {
+  background: url(..//assets/icons/unmute.png) no-repeat;
+}
+
+
+.dark-mode {
+  background: url(..//assets/icons/dark-mode.png) no-repeat;
+}
+
+.light-mode {
+  background: url(..//assets/icons/light-mode.png) no-repeat;
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  border-width: 0px;
+
+  background-size: cover;
+}
+
+
+.unactive {
+  background: url(..//assets/img/btn-unactive.png) no-repeat;
+  color: grey;
+}

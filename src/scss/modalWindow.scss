@@ -1,0 +1,97 @@
+@import 'variables';
+
+.modal {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  background: rgba(18, 20, 19, 0.61);
+
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+    max-width: 350px;
+    max-height: 100%;
+
+    margin: 20px auto;
+    padding: 20px;
+
+    background: url(../assets/img/modal.png) no-repeat;
+    background-size: cover;
+  }
+
+  &__text {
+    margin-top: 25px;
+    text-align: center;
+    font-size: $fontSize;
+    font-weight: 800;
+  }
+
+  &__answer {
+    margin-top: 10px;
+    font-size: $fontSize;
+    text-align: center;
+  }
+
+  &__button {
+    margin-top: 20px;
+
+  }
+
+}
+
+
+.result {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+  background: rgba(18, 20, 19, 0.61);
+
+
+  &__box {
+    display: grid;
+
+    grid-template-columns: 150px 70px 1fr;
+    gap: 20px;
+
+
+    &:nth-child(2) {
+      margin-top: 20px;
+    }
+  }
+
+
+  &__name {}
+
+  &__level {
+    color: $light-green;
+  }
+
+  &__time {
+    justify-self: end;
+  }
+}
+
+.modal body {
+  overflow: hidden;
+}

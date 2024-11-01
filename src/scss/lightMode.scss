@@ -1,0 +1,117 @@
+@import 'normalize.css';
+@import 'variables';
+@import 'modalWindow';
+
+body.light-mode {
+
+  background: url(../assets/img/light-mode/background.png);
+  background-size: cover;
+  color: $dark;
+}
+
+.nonogram__cell.light-mode {
+  background: url(../assets/img/light-mode/cell16px.png);
+  background-size: cover;
+
+  &:hover {
+    background: url(../assets/img/light-mode/cell16px-hover.png);
+    background-size: cover;
+    ;
+  }
+
+  &:active {
+    background: url(../assets/img/light-mode/cell16px-active.png);
+    background-size: cover;
+  }
+}
+
+
+.fill.light-mode {
+  background: url(../assets/img/light-mode/cell16px-active.png);
+  background-size: cover;
+}
+
+.setting__menu.light-mode {
+  background: $light-green;
+  background: url(..//assets/img/light-mode/setting.png);
+
+  @media(max-width:768px) {
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+  }
+
+}
+
+
+.hint.light-mode {
+  background: url(../assets/img/light-mode/border-hint.png) no-repeat;
+}
+
+.light-mode {
+  .btn {
+    color: $light;
+    background: url(../assets/img/light-mode/btn.png) no-repeat;
+    background-size: cover;
+
+
+    @media (hover: hover) {
+      &:hover {
+        color: $light-green;
+        background: url(../assets/img/light-mode/btn-hover.png) no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &:active {
+      color: $light-green;
+      background: url(../assets/img/light-mode/btn-active.png) no-repeat;
+      background-size: cover;
+    }
+  }
+
+
+  .modal__box {
+
+    background: url(../assets/img/light-mode/modal.png) no-repeat;
+    background-size: cover;
+
+  }
+
+
+  .reset {
+    background: url(../assets/icons/light-mode/reset.png) no-repeat;
+    background-size: cover;
+  }
+
+  .mute {
+    background: url(../assets/icons/light-mode/mute.png) no-repeat;
+    background-size: cover;
+  }
+
+
+  .unmute {
+    background: url(../assets/icons/light-mode/unmute.png) no-repeat;
+    background-size: cover;
+  }
+
+  .hint {
+    background-size: cover;
+    border: 1px solid transparent;
+  }
+
+  .cross {
+    background: url(../assets/img/light-mode/cell16px-cross.png) no-repeat;
+    background-size: cover;
+  }
+
+  .setting {
+    background: url(../assets/icons/light-mode/gear.png) no-repeat;
+  }
+
+
+  .decision-game {
+    &.active {
+      background: url(..//assets/icons/light-mode/eye-close.png) no-repeat;
+    }
+  }
+}

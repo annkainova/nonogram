@@ -1,0 +1,244 @@
+@import 'normalize';
+@import 'variables';
+
+.nonogram {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(2, max-content);
+
+  &__wrapper {
+    position: relative;
+  }
+
+
+  &__grid {
+    position: relative;
+    gap: 2px;
+
+    &--5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    &--10 {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+    }
+
+    &--15 {
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
+    }
+  }
+
+  &__cell-box {
+    // z-index: -10;
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+
+
+    .nonogram__separate-box {
+      // z-index: -10;
+      pointer-events: none;
+      width: 169px;
+      height: 168px;
+      outline: 3px solid #080b09;
+
+    }
+  }
+
+
+  &__cell {
+    width: 32px;
+    height: 32px;
+    background: url(../assets/img/cell16px-light.png);
+    background-size: cover;
+
+    &:hover {
+      background: url(../assets/img/cell16px-hover.png);
+    }
+
+    &:active {
+      background: url(../assets/img/cell16px-active.png);
+    }
+
+  }
+
+
+
+  &__left-hint {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+  }
+
+  &__top-hint {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+
+    &--5 {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    &--10 {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+    }
+
+    &--15 {
+      display: grid;
+      grid-template-columns: repeat(15, 1fr);
+    }
+  }
+
+
+
+  &__hint-box--left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    margin-right: 3px;
+
+    &:nth-child(5n):not(:last-child) {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        width: 100%;
+        height: 4px;
+        background: #434d47;
+        ;
+      }
+    }
+  }
+
+  &__hint-box--top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+
+    margin-bottom: 3px;
+
+    &:nth-child(5n):not(:last-child) {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -1px;
+        width: 3px;
+        height: 100%;
+        background: #434d47;
+      }
+    }
+  }
+
+  &__view {}
+}
+
+.hint-box--left {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.hint-box--top {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: url(../assets/img/border-hint.png) no-repeat;
+  background-size: cover;
+  border: 1px solid transparent;
+
+}
+
+.fill {
+  background: url(../assets/img/cell16px-active.png);
+  background-size: cover;
+}
+
+.cross {
+  width: 32px;
+  height: 32px;
+  background: url(../assets/img/cell16px-cross.png);
+  background-size: cover;
+
+}
+
+@media(max-width:768px) {
+  .nonogram__grid--10 .nonogram__cell {
+    width: 25px;
+    height: 25px
+  }
+
+  .nonogram__top-hint--10 .hint {
+    width: 25px;
+    height: 25px
+  }
+
+  .nonogram__left-hint--10 .hint {
+    width: 25px;
+    height: 25px
+  }
+
+  .nonogram__grid--10 .cross {
+    width: 25px;
+    height: 25px
+  }
+
+  .nonogram__grid--10 .nonogram__separate-box {
+    width: 135px;
+    height: 132px;
+  }
+}
+
+@media(max-width:900px) {
+  .nonogram__grid--15 .nonogram__cell {
+    width: 20px;
+    height: 20px
+  }
+
+  .nonogram__top-hint--15 .hint {
+    width: 20px;
+    height: 20px
+  }
+
+  .nonogram__left-hint--15 .hint {
+    width: 20px;
+    height: 20px
+  }
+
+  .nonogram__grid--15 .cross {
+    width: 20px;
+    height: 20px
+  }
+
+
+
+  .nonogram__grid--15 .nonogram__separate-box {
+    width: 110px;
+    height: 108px;
+  }
+
+}

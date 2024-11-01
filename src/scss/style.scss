@@ -1,0 +1,72 @@
+@import 'normalize';
+@import 'variables';
+@import 'setting';
+@import 'nonogram';
+@import 'button';
+@import 'modalWindow';
+@import 'lightMode';
+
+
+@font-face {
+  font-family: 'Kleyn';
+  src: url('../assets/fonts/Kleyn-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bitbybit';
+  src: url('../assets/fonts/Bitbybit.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+body {
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  background: url(..//assets/img/background.png) no-repeat;
+  background-size: cover;
+  color: $light;
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  height: 100vh;
+
+  overflow: hidden;
+
+  @media(max-width:768px) {
+    font-size: 14px;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0 auto;
+
+  &__container {
+    margin: 0 auto;
+    gap: 40px;
+  }
+
+  &__panel {
+    position: absolute;
+
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+
+    width: 100%;
+    text-align: center;
+    margin-top: 38px;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+}
